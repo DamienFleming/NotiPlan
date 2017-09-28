@@ -3,5 +3,5 @@
     <string name="manageButtonText">Manage Notification Plans</string>
     <string name="headerText">Welcome to NotiPlan</string>
     <string name="settingsText">Settings</string>
-    <string name="test">test</string>
+    <string name="PlannerOnOffLabel">Enable All Notification Plans</string>
 </resources>
