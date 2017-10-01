@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/manageNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10sp"
+        android:text="@string/manageMyPlansText"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:background="@drawable/background_box"
+        android:padding="10sp"
+        android:layout_weight="1">
+        <TextView
+        android:id="@+id/EmptyPlanListPlaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10sp"
+        android:text="@string/EmptyPlanListPlaceholderText"
+        android:textColor="#444444"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+    </LinearLayout>
+
+    <Button android:id="@+id/createNewPlan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/createNewPlanText"
+        android:textSize="20sp"
+        android:padding="15sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/button_style"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:onClick=""/>
+
+</LinearLayout>

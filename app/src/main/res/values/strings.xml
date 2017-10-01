@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">NotiPlan</string>
-    <string name="manageButtonText">Manage Notification Plans</string>
+    <string name="appName">NotiPlan</string>
+    <string name="manageMyPlansText">Manage My Plans</string>
     <string name="headerText">Welcome to NotiPlan</string>
     <string name="settingsText">Settings</string>
     <string name="PlannerOnOffLabel">Enable All Notification Plans</string>
+    <string name="createNewPlanText">Create New Plan</string>
+    <string name="EmptyPlanListPlaceholderText">You have no Notification Plans. Why not create one?</string>
 </resources>
