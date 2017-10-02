@@ -6,4 +6,6 @@
     <string name="PlannerOnOffLabel">Enable All Notification Plans</string>
     <string name="createNewPlanText">Create New Plan</string>
     <string name="EmptyPlanListPlaceholderText">You have no Notification Plans. Why not create one?</string>
+    <string name="planNameLabel">Plan Name:</string>
+    <string name="CompleteCreateButton">Create</string>
 </resources>

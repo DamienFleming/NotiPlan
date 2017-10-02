@@ -14,27 +14,32 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-    }
-    public void enableNotiPlanner(View v){
-        String notiEnabled;
+
         ToggleButton toggle = (ToggleButton) findViewById(R.id.PlannerOnOff);
-        if (toggle.isChecked())
-        {
-            notiEnabled = "Enabled";
-        }
-        else
-        {
-            notiEnabled = "Disabled";
-        }
-        if(settingsToast != null)
-        {
-            settingsToast.cancel();
-            settingsToast = null;
-        }
-        if(settingsToast == null)
-        {
-            settingsToast = Toast.makeText(SettingsActivity.this ,"NotiPlanner has been " + notiEnabled, Toast.LENGTH_LONG);
-            settingsToast.show();
-        }
+
+        toggle.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String notiEnabled;
+                ToggleButton toggle = (ToggleButton) findViewById(R.id.PlannerOnOff);
+                if (toggle.isChecked())
+                {
+                    notiEnabled = "Enabled";
+                }
+                else
+                {
+                    notiEnabled = "Disabled";
+                }
+                if(settingsToast != null)
+                {
+                    settingsToast.cancel();
+                    settingsToast = null;
+                }
+                if(settingsToast == null)
+                {
+                    settingsToast = Toast.makeText(SettingsActivity.this ,"NotiPlanner has been " + notiEnabled, Toast.LENGTH_LONG);
+                    settingsToast.show();
+                }
+            }
+        });
     }
 }
