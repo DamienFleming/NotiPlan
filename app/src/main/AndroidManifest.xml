@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ManageNotificationPlansActivity" />
-        <activity android:name=".CreateNewPlanActivity"/>
+        <activity android:name=".CreateNewPlanActivity" />
+        <activity android:label="@string/settingsText" android:name=".AppSettingsActivity"/>
     </application>
 
 </manifest>

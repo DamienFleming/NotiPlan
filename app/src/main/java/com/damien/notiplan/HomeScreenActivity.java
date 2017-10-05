@@ -22,7 +22,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         settingsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(HomeScreenActivity.this, SettingsActivity.class));
+                startActivity(new Intent(HomeScreenActivity.this, AppSettingsActivity.class));
             }
         });
         manageButton.setOnClickListener(new View.OnClickListener() {
