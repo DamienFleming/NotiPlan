@@ -27,35 +27,29 @@ public class AppSettingsFragment extends PreferenceFragment {
         pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
+                String notiEnabled;
+                SwitchPreference pref = (SwitchPreference)findPreference("enable_notiplan");
+                if (pref.isChecked())
+                {
+                    notiEnabled = "Enabled";
+                }
+                else
+                {
+                    notiEnabled = "Disabled";
+                }
+                if(settingsToast != null)
+                {
+                    settingsToast.cancel();
+                    settingsToast = null;
+                }
+                if(settingsToast == null)
+                {
+                    settingsToast = Toast.makeText(getActivity() ,"NotiPlanner has been " + notiEnabled, Toast.LENGTH_SHORT);
+                    settingsToast.show();
+                }
                 return false;
             }
         });
-//        pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-//            @Override
-//            public boolean onPreferenceChange(Preference preference, Object o) {
-//                String notiEnabled;
-//                SwitchPreference pref = (SwitchPreference)findPreference("enable_notiplan");
-//                if (pref.isChecked())
-//                {
-//                    notiEnabled = "Enabled";
-//                }
-//                else
-//                {
-//                    notiEnabled = "Disabled";
-//                }
-//                if(settingsToast != null)
-//                {
-//                    settingsToast.cancel();
-//                    settingsToast = null;
-//                }
-//                if(settingsToast == null)
-//                {
-//                    settingsToast = Toast.makeText((AppSettingsActivity)getActivity() ,"NotiPlanner has been " + notiEnabled, Toast.LENGTH_SHORT);
-//                    settingsToast.show();
-//                }
-//                return false;
-//            }
-//        });
     }
 
 }
