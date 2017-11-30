@@ -18,10 +18,10 @@ public class Plan {
     public final int id;
     public String name;
     public float ringVolume;
-    public LocalTime startTime;
-    public DayOfWeek[] daysOfPlan;
+    public String startTime;
+    public String daysOfPlan;
 
-    public Plan(int id, String name, float ringVolume, LocalTime startTime, DayOfWeek[] daysOfPlan) {
+    public Plan(int id, String name, float ringVolume, String startTime, String daysOfPlan) {
         this.id = id;
         this.name = name;
         this.ringVolume = ringVolume;

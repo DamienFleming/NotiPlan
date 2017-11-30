@@ -13,19 +13,19 @@ import java.util.List;
  */
 
 @Dao
-public interface PlanDAO {
+public interface PlanDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void addPlan(Plan plan);
 
-    @Query("select * from user")
+    @Query("select * from plan")
     public List<Plan> getAllPlans();
 
-    @Query("select * from user where id = :planId")
+    @Query("select * from plan where id = :planId")
     public List<Plan> getPlan(int planId);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updatePlan(Plan plan);
 
-    @Query("delete from user")
+    @Query("delete from plan")
     void removeAllPlans();
 }
