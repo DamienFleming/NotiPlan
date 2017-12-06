@@ -29,11 +29,14 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
 
         List<Plan> plans = database.planDao().getAllPlans();
         if (plans.size()==0) {
-            database.planDao().addPlan(new Plan(1, "Plan 1", 1, "5:30PM", "Monday"));
-            plan = database.planDao().getAllPlans().get(0);
-            Toast.makeText(this, String.valueOf(plan.startTime), Toast.LENGTH_SHORT).show();
+            database.planDao().addPlan(new Plan(1, "Nighttime silence", 0, "12:00AM", new int[] {1, 1, 1, 1, 1, 1, 1}));
+            database.planDao().addPlan(new Plan(2, "Morning restart", 1, "7:00AM", new int[] {1, 1, 1, 1, 1, 1, 1}));
+            database.planDao().addPlan(new Plan(3, "Work silence", 0, "9:00AM", new int[] {0, 1, 1, 1, 1, 1, 0}));
+            database.planDao().addPlan(new Plan(1, "Finished work", 0, "5:00PM", new int[] {0, 1, 1, 1, 1, 1, 0}));
+            //plan = database.planDao().getAllPlans().get(0);
+            //Toast.makeText(this, String.valueOf(plan.startTime), Toast.LENGTH_SHORT).show();
         }
-
+        plans = database.planDao().getAllPlans();
 
         Button createNew = (Button)findViewById(R.id.createNewPlan);
 

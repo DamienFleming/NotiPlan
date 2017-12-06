@@ -9,4 +9,7 @@
     <string name="EmptyPlanListPlaceholderText">You have no Notification Plans. Why not create one?</string>
     <string name="planNameLabel">Plan Name:</string>
     <string name="CompleteCreateButton">Create</string>
+    <string name="view">View</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
