@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.damien.notiplan.Database.AppDatabase;
+
 
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -18,6 +20,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         Button settingsButton = (Button)findViewById(R.id.settingsButton);
         Button manageButton = (Button)findViewById(R.id.manageButton);
 
+        //this.deleteDatabase("userdatabase");
         settingsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(HomeScreenActivity.this, AppSettingsActivity.class));

@@ -22,7 +22,7 @@ public interface PlanDao {
     public List<Plan> getAllPlans();
 
     @Query("select * from plan where id = :planId")
-    public List<Plan> getPlan(int planId);
+    public Plan getPlan(int planId);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updatePlan(Plan plan);
