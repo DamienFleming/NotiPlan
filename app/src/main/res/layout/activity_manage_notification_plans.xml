@@ -1,87 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/planActivity"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/manageNotifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/manageMyPlansText"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+    android:layout_height="match_parent">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/PlanContainer"
+        android:id="@+id/planActivity"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:background="@drawable/plan_container"
-        android:padding="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal"
-        android:visibility="gone">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:id="@+id/manageNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Plan Name"
-            android:textColor="#444444"
+            android:padding="10dp"
+            android:text="@string/manageMyPlansText"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/PlanContainer"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@drawable/plan_container"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="Plan Name"
+                android:textColor="#444444"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_view"
+                android:contentDescription="@string/view" />
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_edit"
+                android:contentDescription="@string/edit" />
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_delete"
+                android:contentDescription="@string/delete" />
+
+        </LinearLayout>
+        <!--<TextView-->
+        <!--android:id="@+id/EmptyPlanListPlaceholder"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10sp"-->
+        <!--android:text="@string/EmptyPlanListPlaceholderText"-->
+        <!--android:textColor="#444444"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textStyle="normal" />-->
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/planFillerSpace"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+
+        <Button android:id="@+id/createNewPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createNewPlanText"
             android:textSize="20sp"
-            android:textStyle="normal" />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:src="@android:drawable/ic_menu_view"
-            android:contentDescription="@string/view" />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:src="@android:drawable/ic_menu_edit"
-            android:contentDescription="@string/edit" />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:src="@android:drawable/ic_menu_delete"
-            android:contentDescription="@string/delete" />
+            android:padding="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center" />
 
     </LinearLayout>
-    <!--<TextView-->
-    <!--android:id="@+id/EmptyPlanListPlaceholder"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:gravity="center"-->
-    <!--android:padding="10sp"-->
-    <!--android:text="@string/EmptyPlanListPlaceholderText"-->
-    <!--android:textColor="#444444"-->
-    <!--android:textSize="20sp"-->
-    <!--android:textStyle="normal" />-->
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/planFillerSpace"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/planViewer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
-
-
-    <Button android:id="@+id/createNewPlan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/createNewPlanText"
-        android:textSize="20sp"
-        android:padding="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColor="#FFFFFF"
-        android:gravity="center" />
-
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="20dp"
+        android:background="@drawable/plan_container"
+        android:visibility="gone">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/planNameLabel"
+                android:textColor="#000000"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:padding="10sp"
+                android:gravity="left"
+                android:layout_weight="0.6"/>
+            <TextView android:id="@+id/planViewer-Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"/>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ring_volume"
+                android:textColor="#000000"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:padding="10sp"
+                android:gravity="left"
+                android:layout_weight="0.6"/>
+            <TextView android:id="@+id/planViewer-RingVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"/>
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activates_at"
+                android:textColor="#000000"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:padding="10sp"
+                android:gravity="left"
+                android:layout_weight="0.6"/>
+            <TextView android:id="@+id/planViewer-StartTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"/>
+        </LinearLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button android:id="@+id/closePlanViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:textSize="20sp"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

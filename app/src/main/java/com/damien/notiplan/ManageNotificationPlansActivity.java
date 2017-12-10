@@ -39,7 +39,7 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
             database.planDao().addPlan(new Plan(1, "Nighttime silence", 0, "12:00AM"));//, new int[] {1, 1, 1, 1, 1, 1, 1}));
             database.planDao().addPlan(new Plan(2, "Morning restart", 1, "7:00AM"));//, new int[] {1, 1, 1, 1, 1, 1, 1}));
             database.planDao().addPlan(new Plan(3, "Work silence", 0, "9:00AM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
-            database.planDao().addPlan(new Plan(4, "Finished work", 0, "5:00PM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
+            database.planDao().addPlan(new Plan(4, "Finished work", 1, "5:00PM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
             //plan = database.planDao().getAllPlans().get(0);
             //Toast.makeText(this, String.valueOf(plan.startTime), Toast.LENGTH_SHORT).show();
         }
@@ -80,7 +80,7 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
             planName.setTypeface(Typeface.DEFAULT);
 
             //View Button
-            ImageButton viewButton = new ImageButton(this);
+            final ImageButton viewButton = new ImageButton(this);
             LayoutParams params3 = new LayoutParams(
                     0,
                     LayoutParams.WRAP_CONTENT,
@@ -90,18 +90,35 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
             viewButton.setLayoutParams(params3);
             viewButton.setImageResource(android.R.drawable.ic_menu_view);
             viewButton.setContentDescription("View");
+            viewButton.setTag(plan.id);
+            viewButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    LinearLayout viewer = findViewById(R.id.planViewer);
+                    viewer.setVisibility(View.VISIBLE);
+                    TextView name = findViewById(R.id.planViewer_Name);
+                    name.setText(database.planDao().getPlan((int)(viewButton.getTag())).name);
+                    TextView ringVolume = findViewById(R.id.planViewer_RingVolume);
+                    int volume = (int)(database.planDao().getPlan((int)(viewButton.getTag())).ringVolume * 100);
+                    String volumeText = Integer.toString(volume) + "%";
+                    ringVolume.setText(volumeText);
+                    TextView startTime = findViewById(R.id.planViewer_StartTime);
+                    startTime.setText(database.planDao().getPlan((int)(viewButton.getTag())).startTime);
+                }
+            });
 
             //Edit Button
             ImageButton editButton = new ImageButton(this);
             editButton.setLayoutParams(params3);
             editButton.setImageResource(android.R.drawable.ic_menu_edit);
             editButton.setContentDescription("Edit");
+            editButton.setTag(plan.id);
 
             //Delete Button
             ImageButton deleteButton = new ImageButton(this);
             deleteButton.setLayoutParams(params3);
             deleteButton.setImageResource(android.R.drawable.ic_menu_delete);
             deleteButton.setContentDescription("Delete");
+            deleteButton.setTag(plan.id);
 
             //Add items to screen
             planContainer.addView(planName);
@@ -124,6 +141,14 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
         createNew.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(ManageNotificationPlansActivity.this, CreateNewPlanActivity.class));
+            }
+        });
+
+        Button closeplanViewer = (Button)findViewById(R.id.closePlanViewer);
+        closeplanViewer.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                LinearLayout viewer = findViewById(R.id.planViewer);
+                viewer.setVisibility(View.GONE);
             }
         });
     }
