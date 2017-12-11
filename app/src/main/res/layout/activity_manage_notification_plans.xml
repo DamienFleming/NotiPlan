@@ -6,17 +6,8 @@
         android:id="@+id/planActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <!--<TextView-->
-            <!--android:id="@+id/manageNotifications"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:gravity="center"-->
-            <!--android:padding="10dp"-->
-            <!--android:text="@string/manageMyPlansText"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="32sp"-->
-            <!--android:textStyle="bold" />-->
+        android:orientation="vertical"
+        android:layout_marginBottom="60dp">
         <TextView
             android:id="@+id/EmptyPlanListPlaceholder"
             android:layout_width="match_parent"
@@ -73,21 +64,7 @@
                 android:src="@android:drawable/ic_menu_delete"
                 android:contentDescription="@string/delete" />
         </LinearLayout>
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <Button android:id="@+id/createNewPlan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/createNewPlanText"
-                android:textSize="20sp"
-                android:padding="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textColor="#FFFFFF"
-                android:gravity="center"
-                android:layout_alignParentBottom="true"/>
-        </RelativeLayout>
+
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/planViewer"
@@ -175,4 +152,19 @@
                 android:layout_alignParentBottom="true"/>
         </RelativeLayout>
     </LinearLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button android:id="@+id/createNewPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createNewPlanText"
+            android:textSize="20sp"
+            android:padding="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
 </FrameLayout>

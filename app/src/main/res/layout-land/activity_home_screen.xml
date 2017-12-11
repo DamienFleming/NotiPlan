@@ -32,4 +32,14 @@
         android:layout_marginRight="20sp"
         android:textColor="#FFFFFF"
         android:gravity="center"/>
+    <Button android:id="@+id/aboutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aboutText"
+        android:textSize="20sp"
+        android:padding="15sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"/>
 </LinearLayout>

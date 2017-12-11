@@ -42,7 +42,7 @@
         <TextView android:id="@+id/ringPercentDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0%"
+            android:text="@string/RingVolumePercent"
             android:textColor="#000000"
             android:textStyle="normal"
             android:textSize="20sp" />

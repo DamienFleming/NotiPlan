@@ -16,9 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:label="Plan Manager" android:name=".ManageNotificationPlansActivity" />
-        <activity android:label="Create New Plan" android:name=".CreateNewPlanActivity" />
-        <activity android:label="Settings" android:name=".AppSettingsActivity"/>
+        <activity
+            android:name=".ManageNotificationPlansActivity"
+            android:label="Plan Manager" />
+        <activity
+            android:name=".CreateNewPlanActivity"
+            android:label="Create New Plan" />
+        <activity
+            android:name=".AppSettingsActivity"
+            android:label="Settings" />
+        <activity android:name=".AboutActivity"
+            android:label="About" />
     </application>
 
 </manifest>

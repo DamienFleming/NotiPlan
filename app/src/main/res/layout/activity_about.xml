@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView android:id="@+id/VersionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/versionLabel"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:gravity="left"
+            android:layout_weight="8"/>
+        <TextView android:id="@+id/VersionNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/versionNumber"
+            android:textColor="#666666"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:gravity="left"
+            android:layout_weight="4"/>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView android:id="@+id/authorLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/authorLabel"
+            android:textColor="#000000"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:gravity="left"
+            android:layout_weight="8"/>
+        <TextView android:id="@+id/author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/author"
+            android:textColor="#666666"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:gravity="left"
+            android:layout_weight="4"/>
+    </LinearLayout>
+</LinearLayout>

@@ -17,4 +17,10 @@
     <string name="done">DONE</string>
     <string name="plan_manager">Plan Manager</string>
     <string name="ok">OK</string>
+    <string name="versionNumber">ALPHA</string>
+    <string name="versionLabel">Version:</string>
+    <string name="authorLabel">Author</string>
+    <string name="author">Damien Fleming</string>
+    <string name="RingVolumePercent">0%</string>
+    <string name="aboutText">About</string>
 </resources>

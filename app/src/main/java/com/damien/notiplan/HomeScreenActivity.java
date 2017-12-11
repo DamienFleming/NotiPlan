@@ -19,6 +19,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         Button settingsButton = (Button)findViewById(R.id.settingsButton);
         Button manageButton = (Button)findViewById(R.id.manageButton);
+        Button aboutButton = (Button)findViewById(R.id.aboutButton);
 
         //this.deleteDatabase("userdatabase");
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +30,11 @@ public class HomeScreenActivity extends AppCompatActivity {
         manageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(HomeScreenActivity.this, ManageNotificationPlansActivity.class));
+            }
+        });
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(HomeScreenActivity.this, AboutActivity.class));
             }
         });
     }
