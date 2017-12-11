@@ -1,6 +1,6 @@
 <resources>
     <string name="appName">NotiPlan</string>
-    <string name="manageMyPlansText">Manage My Plans</string>
+
     <string name="headerText">Welcome to NotiPlan</string>
     <string name="settingsText">Settings</string>
     <string name="PlannerOnOffLabel">Enable All Notification Plans</string>
@@ -15,4 +15,6 @@
     <string name="ring_volume">Ring Volume:</string>
     <string name="activates_at">Activates at:</string>
     <string name="done">DONE</string>
+    <string name="plan_manager">Plan Manager</string>
+    <string name="ok">OK</string>
 </resources>

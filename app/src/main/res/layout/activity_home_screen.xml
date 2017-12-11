@@ -15,7 +15,7 @@
     <Button android:id="@+id/manageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/manageMyPlansText"
+        android:text="@string/plan_manager"
         android:textSize="20sp"
         android:padding="15sp"
         android:layout_marginLeft="20sp"

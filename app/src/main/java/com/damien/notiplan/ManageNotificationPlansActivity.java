@@ -60,19 +60,24 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
                     LayoutParams.MATCH_PARENT,
                     (int)(75*dpScale + 0.5f)
             );
-            params.setMargins(margin, 0, margin, -marginBottom);
+            if (i == 1) {
+                params.setMargins(margin, margin, margin, -marginBottom);
+            }
+            else {
+                params.setMargins(margin, 0, margin, -marginBottom);
+            }
             planContainer.setLayoutParams(params);
-            planContainer.setPadding(padding, padding, padding, padding);
+            planContainer.setPadding(padding*2, padding, padding, padding);
             planContainer.setTag(plan.id);
 
             //Plan TextView
             TextView planName = new TextView(this);
             LayoutParams params2 = new LayoutParams(
                     0,
-                    LayoutParams.MATCH_PARENT,
+                    LayoutParams.WRAP_CONTENT,
                     3
             );
-            params2.gravity = Gravity.CENTER; //LAYOUT GRAVITY WON'T WORK ON TEXTVIEW FOR SOME REASON
+            params2.gravity = Gravity.CENTER;
             planName.setLayoutParams(params2);
             planName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f);
             planName.setTextColor(Color.parseColor("#444444"));
@@ -94,15 +99,20 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
             viewButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     LinearLayout viewer = findViewById(R.id.planViewer);
-                    viewer.setVisibility(View.VISIBLE);
-                    TextView name = findViewById(R.id.planViewer_Name);
-                    name.setText(database.planDao().getPlan((int)(viewButton.getTag())).name);
-                    TextView ringVolume = findViewById(R.id.planViewer_RingVolume);
-                    int volume = (int)(database.planDao().getPlan((int)(viewButton.getTag())).ringVolume * 100);
-                    String volumeText = Integer.toString(volume) + "%";
-                    ringVolume.setText(volumeText);
-                    TextView startTime = findViewById(R.id.planViewer_StartTime);
-                    startTime.setText(database.planDao().getPlan((int)(viewButton.getTag())).startTime);
+                    if (viewer.getVisibility() == View.GONE)
+                    {
+                        viewer.setVisibility(View.VISIBLE);
+                        TextView name = findViewById(R.id.planViewer_Name);
+                        name.setText(database.planDao().getPlan((int)(viewButton.getTag())).name);
+                        TextView ringVolume = findViewById(R.id.planViewer_RingVolume);
+                        int volume = (int)(database.planDao().getPlan((int)(viewButton.getTag())).ringVolume * 100);
+                        String volumeText = Integer.toString(volume) + "%";
+                        ringVolume.setText(volumeText);
+                        TextView startTime = findViewById(R.id.planViewer_StartTime);
+                        startTime.setText(database.planDao().getPlan((int)(viewButton.getTag())).startTime);
+                        LinearLayout planList = findViewById(R.id.planActivity);
+                        planList.setEnabled(false);
+                    }
                 }
             });
 
@@ -149,6 +159,8 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
             public void onClick(View v) {
                 LinearLayout viewer = findViewById(R.id.planViewer);
                 viewer.setVisibility(View.GONE);
+                LinearLayout planList = findViewById(R.id.planActivity);
+                planList.setEnabled(true);
             }
         });
     }

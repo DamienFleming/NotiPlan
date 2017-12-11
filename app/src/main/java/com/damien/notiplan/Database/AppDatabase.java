@@ -10,12 +10,14 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 
-@Database(entities = {Plan.class}, version = 16, exportSchema = false)
+@Database(entities = {Plan.class, DayOfWeek.class, PlanDays.class}, version = 16, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
 
     public abstract PlanDao planDao();
+    public abstract DayOfWeekDao dayOfWeekDao();
+    public abstract PlanDaysDao planDaysDao();
 
     public static AppDatabase getDatabase(Context context) {
         if (INSTANCE == null) {
