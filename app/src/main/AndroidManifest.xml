@@ -16,6 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".NotiplanFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".NotiplanFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_foreground" />
         <activity
             android:name=".ManageNotificationPlansActivity"
             android:label="Plan Manager" />
@@ -25,8 +39,10 @@
         <activity
             android:name=".AppSettingsActivity"
             android:label="Settings" />
-        <activity android:name=".AboutActivity"
+        <activity
+            android:name=".AboutActivity"
             android:label="About" />
+
     </application>
 
 </manifest>

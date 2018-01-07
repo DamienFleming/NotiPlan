@@ -1,11 +1,16 @@
 package com.damien.notiplan;
 
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.damien.notiplan.Database.AppDatabase;
 
@@ -37,5 +42,16 @@ public class HomeScreenActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeScreenActivity.this, AboutActivity.class));
             }
         });
+
+        if (Build.VERSION.SDK_INT >= 26) {
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            String id = "NotiplanChannel";
+            CharSequence name = "NotiPlan";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(id, name, importance);
+            mNotificationManager.createNotificationChannel(mChannel);
+        }
     }
+
 }
