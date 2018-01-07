@@ -23,4 +23,6 @@
     <string name="author">Damien Fleming</string>
     <string name="RingVolumePercent">0%</string>
     <string name="aboutText">About</string>
+    <string name="email">Email</string>
+    <string name="facebook">Facebook</string>
 </resources>
