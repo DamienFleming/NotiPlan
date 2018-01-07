@@ -14,8 +14,8 @@ import java.time.LocalTime;
 @Entity
 public class Plan {
 
-    @PrimaryKey
-    public final int id;
+    @PrimaryKey (autoGenerate = true)
+    public int id;
     public String name;
     public float ringVolume;
     public String startTime;
@@ -28,8 +28,7 @@ public class Plan {
 //    public int activeOnSaturday;
 
 
-    public Plan(int id, String name, float ringVolume, String startTime) { //, int[] daysOfPlan) {
-        this.id = id;
+    public Plan(String name, float ringVolume, String startTime) { //, int[] daysOfPlan) {
         this.name = name;
         this.ringVolume = ringVolume;
         this.startTime = startTime;

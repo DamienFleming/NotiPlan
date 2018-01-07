@@ -32,18 +32,17 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
         database = AppDatabase.getDatabase(getApplicationContext());
 
         // cleanup for testing some initial data
-        database.planDao().removeAllPlans();
+        //database.planDao().removeAllPlans();
 
         List<Plan> plans = database.planDao().getAllPlans();
-        if (plans.size()==0) {
-            database.planDao().addPlan(new Plan(1, "Nighttime silence", 0, "12:00AM"));//, new int[] {1, 1, 1, 1, 1, 1, 1}));
-            database.planDao().addPlan(new Plan(2, "Morning restart", 1, "7:00AM"));//, new int[] {1, 1, 1, 1, 1, 1, 1}));
-            database.planDao().addPlan(new Plan(3, "Work silence", 0, "9:00AM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
-            database.planDao().addPlan(new Plan(4, "Finished work", 1, "5:00PM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
-            //plan = database.planDao().getAllPlans().get(0);
-            //Toast.makeText(this, String.valueOf(plan.startTime), Toast.LENGTH_SHORT).show();
-        }
-        plans = database.planDao().getAllPlans();
+//        if (plans.size()==0) {
+//            database.planDao().addPlan(new Plan("Nighttime silence", 0, "12:00AM"));//, new int[] {1, 1, 1, 1, 1, 1, 1}));
+//            database.planDao().addPlan(new Plan("Morning restart", 1, "7:00AM"));//, new int[] {1, 1, 1, 1, 1, 1, 1}));
+//            database.planDao().addPlan(new Plan("Work silence", 0, "9:00AM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
+//            database.planDao().addPlan(new Plan("Finished work", 1, "5:00PM"));//, new int[] {0, 1, 1, 1, 1, 1, 0}));
+//            //plan = database.planDao().getAllPlans().get(0);
+//            //Toast.makeText(this, String.valueOf(plan.startTime), Toast.LENGTH_SHORT).show();
+//        }
         for (int i = 1; i <= plans.size(); i++) {
 
             plan = database.planDao().getPlan(i);
@@ -117,18 +116,36 @@ public class ManageNotificationPlansActivity extends AppCompatActivity {
             });
 
             //Edit Button
-            ImageButton editButton = new ImageButton(this);
+            final ImageButton editButton = new ImageButton(this);
             editButton.setLayoutParams(params3);
             editButton.setImageResource(android.R.drawable.ic_menu_edit);
             editButton.setContentDescription("Edit");
             editButton.setTag(plan.id);
+//            editButton.setOnClickListener(new View.OnClickListener() {
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(ManageNotificationPlansActivity.this, CreateNewPlanActivity.class);
+//                    intent.putExtra("editPlanId", (int)(editButton.getTag()));
+//                    startActivity(intent);
+//                }
+//            });
 
             //Delete Button
-            ImageButton deleteButton = new ImageButton(this);
+            final ImageButton deleteButton = new ImageButton(this);
             deleteButton.setLayoutParams(params3);
             deleteButton.setImageResource(android.R.drawable.ic_menu_delete);
             deleteButton.setContentDescription("Delete");
             deleteButton.setTag(plan.id);
+            deleteButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    database.planDao().removePlan(database.planDao().getPlan((int)(deleteButton.getTag())));
+                    finish();
+                    overridePendingTransition(0, 0);
+                    startActivity(getIntent());
+                    overridePendingTransition(0, 0);
+                }
+            });
+
+
 
             //Add items to screen
             planContainer.addView(planName);

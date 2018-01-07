@@ -13,30 +13,46 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.damien.notiplan.Database.AppDatabase;
+import com.damien.notiplan.Database.Plan;
+
 import org.w3c.dom.Text;
 
 public class CreateNewPlanActivity extends AppCompatActivity {
+
+    private Plan plan;
+    private AppDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_new_plan);
 
-        final Button complete = (Button)findViewById(R.id.completeCreatePlan);
+        database = AppDatabase.getDatabase(getApplicationContext());
 
+        final Button complete = (Button)findViewById(R.id.completeCreatePlan);
 
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String planName = ((EditText)findViewById(R.id.planNameInput)).getText().toString();
-                if (!(planName.length() < 3))
+                TextView startTime = findViewById(R.id.startTimeInput);
+                SeekBar ringVolumeInput = findViewById(R.id.ringVolumeInput);
+                if (!(planName.length() < 3) && startTime.getText() != "")
                 {
                     Toast toast = Toast.makeText(CreateNewPlanActivity.this ,"\"" + planName + "\" has been created", Toast.LENGTH_LONG);
                     toast.show();
+
+                    float ringVolume = ringVolumeInput.getProgress();
+                    ringVolume = ringVolume/100;
+
+                    plan = new Plan(planName, ringVolume, startTime.getText().toString());
+                    database.planDao().addPlan(plan);
+
                     startActivity(new Intent(CreateNewPlanActivity.this, ManageNotificationPlansActivity.class));
                 }
                 else
                 {
-                    Toast toast = Toast.makeText(CreateNewPlanActivity.this ,"Your plan name must be at least 3 characters long.", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(CreateNewPlanActivity.this ,"Your plan name must be at least 3 characters long/must enter start time", Toast.LENGTH_LONG);
                     toast.show();
                 }
 
