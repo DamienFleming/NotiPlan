@@ -2,70 +2,76 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/planActivity"
+    <ListView android:id="@+id/planListHolder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginBottom="60dp">
-        <TextView
-            android:id="@+id/EmptyPlanListPlaceholder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10sp"
-            android:text="@string/EmptyPlanListPlaceholderText"
-            android:textColor="#444444"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            android:visibility="gone"/>
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/PlanContainer"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:background="@drawable/plan_container"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:visibility="gone">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:layout_gravity="center"
-                android:text="Plan Name"
-                android:textColor="#444444"
-                android:textSize="20sp"
-                android:textStyle="normal" />
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:src="@android:drawable/ic_menu_view"
-                android:contentDescription="@string/view" />
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:src="@android:drawable/ic_menu_edit"
-                android:contentDescription="@string/edit" />
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:src="@android:drawable/ic_menu_delete"
-                android:contentDescription="@string/delete" />
-        </LinearLayout>
 
-    </LinearLayout>
+    </ListView>
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/planListHolder"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_marginBottom="60dp">-->
+        <!--<TextView-->
+            <!--android:id="@+id/EmptyPlanListPlaceholder"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="10sp"-->
+            <!--android:text="@string/EmptyPlanListPlaceholderText"-->
+            <!--android:textColor="#444444"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textStyle="normal"-->
+            <!--android:visibility="gone"/>-->
+        <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:id="@+id/PlanContainer"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="75dp"-->
+            <!--android:background="@drawable/plan_container"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:visibility="gone">-->
+            <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text="Plan Name"-->
+                <!--android:textColor="#444444"-->
+                <!--android:textSize="20sp"-->
+                <!--android:textStyle="normal" />-->
+            <!--<ImageButton-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:src="@android:drawable/ic_menu_view"-->
+                <!--android:contentDescription="@string/view" />-->
+            <!--<ImageButton-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:src="@android:drawable/ic_menu_edit"-->
+                <!--android:contentDescription="@string/edit" />-->
+            <!--<ImageButton-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:src="@android:drawable/ic_menu_delete"-->
+                <!--android:contentDescription="@string/delete" />-->
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/planViewer"
         android:layout_width="match_parent"
