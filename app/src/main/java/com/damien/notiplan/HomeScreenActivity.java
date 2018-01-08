@@ -25,6 +25,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         Button settingsButton = (Button)findViewById(R.id.settingsButton);
         Button manageButton = (Button)findViewById(R.id.manageButton);
         Button aboutButton = (Button)findViewById(R.id.aboutButton);
+        Button asyncButton = (Button)findViewById(R.id.AsyncBackgroundDownloadButton);
 
         //this.deleteDatabase("userdatabase");
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +41,11 @@ public class HomeScreenActivity extends AppCompatActivity {
         aboutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(HomeScreenActivity.this, AboutActivity.class));
+            }
+        });
+        asyncButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(HomeScreenActivity.this, AsyncBackgroundDownloadActivity.class));
             }
         });
 
